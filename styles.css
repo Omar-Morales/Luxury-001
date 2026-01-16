@@ -60,42 +60,23 @@ a {
   position: sticky;
   width: 100%;
   background: rgba(12, 11, 10, 0.9);
-  border-bottom: 1px solid rgba(200, 161, 74, 0.2);
-  box-shadow: 0 1px 0 rgba(200, 161, 74, 0.2), 0 12px 30px rgba(12, 11, 10, 0.35);
+  border-bottom: 3px solid rgba(200, 161, 74, 0.35);
 }
 
 .navbar {
-  padding: 16px 8vw;
+  padding: 8px 4vw;
 }
 
-.hero-header::before,
-.hero-header::after {
-  content: "";
-  position: absolute;
-  left: 10%;
-  right: 10%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(200, 161, 74, 0.6), transparent);
-  pointer-events: none;
-}
-
-.hero-header::before {
-  top: 0;
-}
-
-.hero-header::after {
-  bottom: 0;
-}
 
 .header-brand {
   font-family: "Playfair Display", serif;
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-size: clamp(2rem, 2.5vw, 3rem);
   letter-spacing: 1px;
   color: var(--gold);
   text-align: center;
   margin-bottom: 6px;
-  line-height: 1.1;
-  max-height: 64px;
+  line-height: 1.2;
+  max-height: 90px;
   overflow: hidden;
   transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease, margin 0.3s ease;
 }
@@ -162,8 +143,8 @@ body.hide-header-brand .header-brand {
 
 .eyebrow {
   text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 0.95rem;
+  letter-spacing: 8px;
+  font-size: 1rem;
   color: var(--gold-soft);
 }
 
@@ -202,7 +183,20 @@ body.hide-header-brand .header-brand {
 
 .section-block {
   padding: 96px 8vw;
+  position: relative;
 }
+
+.section-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 161, 74, 0.6), transparent);
+  pointer-events: none;
+}
+
 
 .section-head {
   display: flex;

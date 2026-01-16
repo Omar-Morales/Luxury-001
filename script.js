@@ -23,8 +23,8 @@ revealItems.forEach((item) => observer.observe(item));
 
 const heroSection = document.querySelector("#inicio");
 let headerBrandVisible = true;
-const SHOW_THRESHOLD = 20;
-const HIDE_THRESHOLD = 80;
+const SHOW_THRESHOLD = 1;
+const HIDE_THRESHOLD = 1;
 
 const toggleHeaderBrand = () => {
   if (!heroSection) {
@@ -42,6 +42,7 @@ const toggleHeaderBrand = () => {
 };
 
 if (heroSection) {
+  document.body.classList.remove("hide-header-brand");
   toggleHeaderBrand();
   window.addEventListener("scroll", toggleHeaderBrand, { passive: true });
   window.addEventListener("resize", toggleHeaderBrand);
