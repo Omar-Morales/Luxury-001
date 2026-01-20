@@ -22,6 +22,7 @@ const observer = new IntersectionObserver(
 revealItems.forEach((item) => observer.observe(item));
 
 const heroSection = document.querySelector("#inicio");
+const headerBrand = document.querySelector(".header-brand");
 let headerBrandVisible = true;
 const SHOW_THRESHOLD = 1;
 const HIDE_THRESHOLD = 1;
@@ -46,6 +47,13 @@ if (heroSection) {
   toggleHeaderBrand();
   window.addEventListener("scroll", toggleHeaderBrand, { passive: true });
   window.addEventListener("resize", toggleHeaderBrand);
+}
+
+if (headerBrand) {
+  headerBrand.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 }
 
 const videoCards = document.querySelectorAll("[data-video]");
@@ -272,3 +280,37 @@ if (contactForm) {
     window.open(url, "_blank");
   });
 }
+
+const sectionLinks = Array.from(document.querySelectorAll(".navbar-nav .nav-link"));
+const sectionTargets = sectionLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
+
+sectionLinks.forEach((link) => {
+  if (link.getAttribute("href") === "#inicio") {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+});
+
+const updateActiveNav = () => {
+  const scrollPosition = window.scrollY + 140;
+  let activeId = "";
+
+  sectionTargets.forEach((section) => {
+    if (section.offsetTop <= scrollPosition) {
+      activeId = section.id;
+    }
+  });
+
+  sectionLinks.forEach((link) => {
+    const linkTarget = link.getAttribute("href").slice(1);
+    link.classList.toggle("active", linkTarget === activeId);
+  });
+};
+
+updateActiveNav();
+window.addEventListener("scroll", updateActiveNav, { passive: true });
+window.addEventListener("resize", updateActiveNav);
