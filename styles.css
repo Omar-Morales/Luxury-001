@@ -64,37 +64,48 @@ a {
 }
 
 .navbar {
-  padding: 8px 4vw;
+  padding: 10px 4vw;
 }
 
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 50px;
+}
 
-.header-brand {
+.header-brand-text {
   font-family: "Playfair Display", serif;
-  font-size: clamp(2rem, 2.5vw, 3rem);
-  letter-spacing: 1px;
+  font-size: clamp(1.6rem, 2vw, 1.8rem);
+  letter-spacing: 2px;
   color: var(--gold);
-  text-align: center;
-  margin-bottom: 6px;
-  line-height: 1.2;
-  max-height: 90px;
-  overflow: hidden;
-  transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease, margin 0.3s ease;
-  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.header-brand img {
-  height: 40px;
-  width: auto;
-  margin: 0 auto;
-  display: block;
-}
-
-body.hide-header-brand .header-brand {
+body.hide-header-brand .header-brand-text {
   opacity: 0;
   transform: translateY(-10px);
-  max-height: 0;
-  margin-bottom: 0;
   pointer-events: none;
+}
+
+.header-social {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  color: var(--gold);
+}
+
+.header-social a {
+  color: inherit;
+  font-size: 1.3rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.header-social a:hover {
+  color: var(--gold-soft);
+  transform: translateY(-2px);
 }
 
 .navbar-nav .nav-link {
@@ -154,6 +165,11 @@ body.hide-header-brand .header-brand {
   font-family: "Playfair Display", serif;
   font-size: clamp(2.6rem, 4vw, 4rem);
   margin: 16px 0;
+}
+
+.hero-logo {
+  max-width: 450px;
+  margin: 0 auto 16px;
 }
 
 .eyebrow {
@@ -520,8 +536,17 @@ body.hide-header-brand .header-brand {
     background: rgba(12, 11, 10, 0.9);
   }
 
-  .header-brand {
-    font-size: clamp(1.8rem, 6vw, 2.6rem);
+  .header-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header-brand-text {
+    font-size: clamp(1.4rem, 6vw, 2rem);
+  }
+
+  .header-social {
+    order: 3;
   }
 
   .carousel-track {

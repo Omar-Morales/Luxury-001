@@ -21,33 +21,7 @@ const observer = new IntersectionObserver(
 
 revealItems.forEach((item) => observer.observe(item));
 
-const heroSection = document.querySelector("#inicio");
-const headerBrand = document.querySelector(".header-brand");
-let headerBrandVisible = true;
-const SHOW_THRESHOLD = 1;
-const HIDE_THRESHOLD = 1;
-
-const toggleHeaderBrand = () => {
-  if (!heroSection) {
-    return;
-  }
-
-  const scrollY = window.scrollY;
-  if (headerBrandVisible && scrollY > HIDE_THRESHOLD) {
-    headerBrandVisible = false;
-    document.body.classList.add("hide-header-brand");
-  } else if (!headerBrandVisible && scrollY < SHOW_THRESHOLD) {
-    headerBrandVisible = true;
-    document.body.classList.remove("hide-header-brand");
-  }
-};
-
-if (heroSection) {
-  document.body.classList.remove("hide-header-brand");
-  toggleHeaderBrand();
-  window.addEventListener("scroll", toggleHeaderBrand, { passive: true });
-  window.addEventListener("resize", toggleHeaderBrand);
-}
+const headerBrand = document.querySelector(".header-brand-text");
 
 if (headerBrand) {
   headerBrand.addEventListener("click", (event) => {
