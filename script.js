@@ -255,6 +255,21 @@ if (contactForm) {
   });
 }
 
+const videoModal = document.getElementById("videoModal");
+const heroVideo = document.getElementById("heroVideo");
+
+if (videoModal && heroVideo) {
+  videoModal.addEventListener("shown.bs.modal", () => {
+    heroVideo.currentTime = 0;
+    heroVideo.play().catch(() => {});
+  });
+
+  videoModal.addEventListener("hidden.bs.modal", () => {
+    heroVideo.pause();
+    heroVideo.currentTime = 0;
+  });
+}
+
 const sectionLinks = Array.from(document.querySelectorAll(".navbar-nav .nav-link"));
 const sectionTargets = sectionLinks
   .map((link) => document.querySelector(link.getAttribute("href")))

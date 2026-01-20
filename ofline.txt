@@ -1,0 +1,6 @@
+cd o:\Proyectos\Luxury\Luxury-001
+python -m http.server 8080
+
+
+cd o:\Proyectos\Luxury\Luxury-001
+.\cloudflared.exe tunnel --url http://localhost:8080
