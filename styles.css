@@ -655,6 +655,7 @@ body.hide-header-brand .header-brand-text {
     align-items: center;
     justify-content: flex-start;
     overflow: auto;
+    border-bottom: 2px solid rgba(200, 161, 74, 0.35);
   }
 
   .navbar-collapse.collapse:not(.show) {
