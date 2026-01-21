@@ -108,6 +108,12 @@ body.hide-header-brand .header-brand-text {
   transform: translateY(-2px);
 }
 
+@media (min-width: 769px) {
+  .header-social-menu {
+    display: none !important;
+  }
+}
+
 .navbar-nav .nav-link {
   color: var(--white);
   font-size: 0.95rem;
@@ -626,28 +632,55 @@ body.hide-header-brand .header-brand-text {
   }
 
   .header-row {
-    display: grid;
-    grid-template-columns: 1fr auto;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
     padding: 6px 8px 0;
   }
 
-  .header-brand-text {
-    justify-self: start;
+  .navbar-collapse,
+  .navbar-collapse.collapse,
+  .navbar-collapse.collapsing {
+    position: fixed !important;
+    top: var(--header-height, 72px);
+    left: 0;
+    right: 0;
+    height: auto;
+    max-height: calc(100vh - var(--header-height, 72px));
+    background: rgba(12, 11, 10, 0.95);
+    padding: 24px 0 18px;
+    z-index: 40;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: auto;
   }
 
-  .navbar-toggler {
-    justify-self: end;
+  .navbar-collapse.collapse:not(.show) {
+    display: none !important;
   }
 
-  .navbar-collapse {
-    grid-column: 1 / -1;
+  .navbar-collapse.show {
+    display: flex !important;
+  }
+
+  .navbar-collapse.collapse,
+  .navbar-collapse.collapsing {
+    transition: none !important;
   }
 
   .navbar-nav {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 16px;
+    text-align: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+    padding-top: 8px;
+    padding-bottom: 12px;
   }
 
   .navbar-nav .nav-link {
@@ -655,9 +688,25 @@ body.hide-header-brand .header-brand-text {
   }
 
   .header-social {
-    grid-column: 1 / -1;
-    justify-content: center;
-    margin-top: 6px;
+    justify-content: flex-end;
+    margin-top: 0;
+  }
+
+  .header-social-menu {
+    display: none;
+  }
+
+  .navbar-collapse.show .header-social-menu {
+    display: flex;
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 0 24px 12px;
+    margin-top: 12px;
+    width: 100%;
+  }
+
+  body.nav-open .header-row > .header-social {
+    display: none;
   }
 
   .event-card img,

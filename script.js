@@ -275,6 +275,30 @@ const sectionTargets = sectionLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
   .filter(Boolean);
 
+const navCollapse = document.getElementById("luxuryNav");
+const updateHeaderHeight = () => {
+  const header = document.querySelector(".site-header");
+  if (!header) {
+    return;
+  }
+  const height = header.getBoundingClientRect().height;
+  document.documentElement.style.setProperty("--header-height", `${height}px`);
+};
+
+updateHeaderHeight();
+window.addEventListener("resize", updateHeaderHeight);
+
+if (navCollapse) {
+  navCollapse.addEventListener("shown.bs.collapse", () => {
+    document.body.classList.add("nav-open");
+    updateHeaderHeight();
+  });
+
+  navCollapse.addEventListener("hidden.bs.collapse", () => {
+    document.body.classList.remove("nav-open");
+  });
+}
+
 sectionLinks.forEach((link) => {
   if (link.getAttribute("href") === "#inicio") {
     link.addEventListener("click", (event) => {
@@ -282,6 +306,13 @@ sectionLinks.forEach((link) => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
+
+  link.addEventListener("click", () => {
+    if (navCollapse && navCollapse.classList.contains("show")) {
+      const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navCollapse);
+      bsCollapse.hide();
+    }
+  });
 });
 
 const updateActiveNav = () => {
