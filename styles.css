@@ -168,7 +168,7 @@ body.hide-header-brand .header-brand-text {
 }
 
 .hero-logo {
-  max-width: 450px;
+  max-width: 350px;
   margin: 0 auto 16px;
 }
 
@@ -198,11 +198,12 @@ body.hide-header-brand .header-brand-text {
   place-items: center;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: playPulse 2s ease-in-out infinite;
 }
 
 .play-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(200, 161, 74, 0.35);
+  transform: scale(1.08);
+  box-shadow: 0 16px 40px rgba(200, 161, 74, 0.45);
 }
 
 .play-icon {
@@ -212,6 +213,26 @@ body.hide-header-brand .header-brand-text {
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
   margin-left: 4px;
+  transition: transform 0.3s ease;
+}
+
+.play-button:hover .play-icon {
+  transform: scale(1.6);
+}
+
+@keyframes playPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(200, 161, 74, 0.55);
+    transform: scale(1);
+  }
+  60% {
+    box-shadow: 0 0 0 20px rgba(200, 161, 74, 0);
+    transform: scale(1.04);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(200, 161, 74, 0);
+    transform: scale(1);
+  }
 }
 
 .section-block {
