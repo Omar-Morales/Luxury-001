@@ -288,6 +288,26 @@ const updateHeaderHeight = () => {
 updateHeaderHeight();
 window.addEventListener("resize", updateHeaderHeight);
 
+const updateHeroSizing = () => {
+  const header = document.querySelector(".site-header");
+  const hero = document.querySelector("#inicio");
+  if (!header || !hero) {
+    return;
+  }
+  const headerHeight = header.getBoundingClientRect().height;
+  const viewportHeight = window.innerHeight;
+  const paddingTop = Math.max(headerHeight + 40, 120);
+  const paddingBottom = 80;
+  const minHeight = Math.max(viewportHeight - headerHeight, 520);
+
+  document.documentElement.style.setProperty("--hero-pad-top", `${paddingTop}px`);
+  document.documentElement.style.setProperty("--hero-pad-bottom", `${paddingBottom}px`);
+  document.documentElement.style.setProperty("--hero-min-height", `${minHeight}px`);
+};
+
+updateHeroSizing();
+window.addEventListener("resize", updateHeroSizing);
+
 if (navCollapse) {
   navCollapse.addEventListener("shown.bs.collapse", () => {
     document.body.classList.add("nav-open");

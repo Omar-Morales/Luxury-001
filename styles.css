@@ -105,7 +105,7 @@ body.hide-header-brand .header-brand-text {
 
 .header-social a:hover {
   color: var(--gold-soft);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 }
 
 @media (min-width: 769px) {
@@ -116,7 +116,7 @@ body.hide-header-brand .header-brand-text {
 
 .navbar-nav .nav-link {
   color: var(--white);
-  font-size: 0.95rem;
+  font-size: 1rem;
   margin-right: 14px;
   position: relative;
 }
@@ -142,7 +142,10 @@ body.hide-header-brand .header-brand-text {
 .hero-section {
   position: relative;
   padding: 140px 8vw 120px;
-  min-height: 90vh;
+  min-height: 100vh;
+  padding-top: var(--hero-pad-top, 140px);
+  padding-bottom: var(--hero-pad-bottom, 120px);
+  min-height: var(--hero-min-height, 100vh);
   display: grid;
   place-items: center;
   text-align: center;
@@ -152,7 +155,7 @@ body.hide-header-brand .header-brand-text {
 }
 
 .hero-centered .lead {
-  margin: 12px auto 0;
+  margin: 20px auto 0;
 }
 
 .hero-content {
@@ -170,12 +173,12 @@ body.hide-header-brand .header-brand-text {
 .hero-section h1 {
   font-family: "Playfair Display", serif;
   font-size: clamp(2.6rem, 4vw, 4rem);
-  margin: 16px 0;
+  margin: 20px 0;
 }
 
 .hero-logo {
   max-width: 350px;
-  margin: 0 auto 16px;
+  margin: 0 auto 20px;
 }
 
 .eyebrow {
