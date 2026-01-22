@@ -188,6 +188,7 @@ body.hide-header-brand .header-brand-text {
   font-weight: 500;
   color: var(--gold);
   text-shadow: 0 6px 18px rgba(200, 161, 74, 0.35);
+  font-family: "Space Grotesk", sans-serif;
 }
 
 .lead {
@@ -298,6 +299,7 @@ body.hide-header-brand .header-brand-text {
 
 .section-title-animate {
   font-size: clamp(2.4rem, 3.6vw, 3.2rem);
+  font-family: "Playfair Display", serif;
 }
 
 .reveal-on-scroll.is-visible .section-title-animate {
