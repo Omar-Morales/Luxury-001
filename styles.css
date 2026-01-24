@@ -286,6 +286,11 @@ body.hide-header-brand .header-brand-text {
   color: rgba(247, 244, 238, 0.75);
 }
 
+.about-label {
+  display: inline-block;
+  margin-bottom: 34px;
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
@@ -295,6 +300,7 @@ body.hide-header-brand .header-brand-text {
 
 .about-copy .section-lead {
   max-width: 520px;
+  line-height: 1.8;
 }
 
 .section-title-animate {
@@ -318,7 +324,7 @@ body.hide-header-brand .header-brand-text {
 }
 
 .about-signature {
-  margin-top: 24px;
+  margin-top: 28px;
   display: grid;
   gap: 6px;
 }
@@ -341,16 +347,18 @@ body.hide-header-brand .header-brand-text {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 24px;
+  margin-top: 30px;
+  align-items: stretch;
 }
 
 .about-card {
   background: rgba(247, 244, 238, 0.08);
   border: 1px solid rgba(200, 161, 74, 0.35);
   border-radius: 18px;
-  padding: 18px;
+  padding: 16px;
   display: grid;
   gap: 10px;
+  height: 100%;
 }
 
 .about-card i {
@@ -379,7 +387,7 @@ body.hide-header-brand .header-brand-text {
 
 .about-image-grid {
   display: grid;
-  gap: 16px;
+  gap: 20px;
 }
 
 .about-image-row {
