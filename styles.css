@@ -299,8 +299,9 @@ body.hide-header-brand .header-brand-text {
 }
 
 .about-copy .section-lead {
-  max-width: 520px;
+  max-width: none;
   line-height: 1.8;
+  margin-top: 40px;
 }
 
 .section-title-animate {
@@ -347,7 +348,7 @@ body.hide-header-brand .header-brand-text {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 30px;
+  margin-top: 40px;
   align-items: stretch;
 }
 
