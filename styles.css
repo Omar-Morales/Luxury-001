@@ -361,7 +361,7 @@ body.hide-header-brand .header-brand-text {
   grid-template-columns: auto 1fr;
   grid-template-rows: auto auto;
   column-gap: 10px;
-  row-gap: 20px;
+  row-gap: 10px;
   align-items: center;
   height: 100%;
 }
@@ -826,6 +826,30 @@ body.hide-header-brand .header-brand-text {
 
   .navbar-collapse.show {
     display: flex !important;
+  }
+
+  .about-image-grid {
+    gap: 14px;
+  }
+
+  .about-image-row {
+    gap: 14px;
+  }
+
+  .about-image-row img {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    object-position: center;
+  }
+
+  .about-image-large img {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    object-position: center;
   }
 
   .navbar-collapse.collapse,
