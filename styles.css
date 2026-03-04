@@ -255,6 +255,10 @@ body.hide-header-brand .header-brand-text {
   background: linear-gradient(135deg, rgba(26, 21, 17, 0.92), rgba(12, 11, 10, 0.75));
 }
 
+#sedes.section-block {
+  background: linear-gradient(135deg, rgba(26, 21, 17, 0.92), rgba(12, 11, 10, 0.75));
+}
+
 .section-block::before {
   content: "";
   position: absolute;
