@@ -335,6 +335,42 @@ sectionLinks.forEach((link) => {
   });
 });
 
+const sedeVideoModal = document.getElementById("sedeVideoModal");
+const sedeVideo = document.getElementById("sedeVideo");
+if (sedeVideoModal && sedeVideo) {
+  const sedeModal = bootstrap.Modal.getOrCreateInstance(sedeVideoModal);
+  const sedeSources = sedeVideo.querySelector("source");
+
+  document.addEventListener("click", (event) => {
+    const media = event.target.closest("[data-sede-video]");
+    if (!media) {
+      return;
+    }
+
+    event.preventDefault();
+    const src = media.dataset.sedeVideo;
+    if (sedeSources) {
+      sedeSources.src = src;
+    } else {
+      sedeVideo.src = src;
+    }
+    sedeVideo.muted = false;
+    sedeVideo.controls = true;
+    sedeVideo.volume = 1;
+    sedeVideo.currentTime = 0;
+    sedeVideo.load();
+    sedeModal.show();
+    requestAnimationFrame(() => {
+      sedeVideo.play().catch(() => {});
+    });
+  });
+
+  sedeVideoModal.addEventListener("hidden.bs.modal", () => {
+    sedeVideo.pause();
+    sedeVideo.currentTime = 0;
+  });
+}
+
 const updateActiveNav = () => {
   const scrollPosition = window.scrollY + 140;
   let activeId = "";

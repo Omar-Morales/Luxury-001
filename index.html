@@ -134,36 +134,46 @@
           <div class="section-head">
             <div>
               <p class="eyebrow">Nuestras sedes</p>
-              <h2>Comas y Trapiche, dos espacios de lujo.</h2>
+              <h2>Dos espacios diseñados para celebrar eventos inolvidables.</h2>
+              <p class="section-lead">
+                Luxury Salón de Eventos cuenta con dos espacios exclusivos en Lima Norte, diseñados para bodas,
+                quinceaños, eventos corporativos y celebraciones especiales, con ambientes elegantes y una atención
+                cuidada en cada detalle.
+              </p>
             </div>
-            <p class="section-lead">Pasa el mouse para ver un recorrido en video.</p>
           </div>
           <div class="row g-4">
             <div class="col-lg-6">
               <div class="sede-card">
-                <div class="sede-media" data-video>
+                <div class="sede-media" data-video data-sede-video="media/trapiche(1).mp4">
                   <img src="media/comas1.jpg" alt="Sede Comas" />
                   <video muted loop playsinline preload="metadata">
-                    <source src="media/presentacion.mp4" type="video/mp4" />
+                    <source src="media/trapiche(1).mp4" type="video/mp4" />
                   </video>
                 </div>
                 <div class="sede-info">
                   <h3>Luxury Comas</h3>
                   <p>Salon principal, terraza y areas lounge personalizables.</p>
+                  <a class="sede-location" href="https://maps.app.goo.gl/MnkEZxuHLMEoj1Zf9" target="_blank" rel="noopener">
+                    📍 Ver ubicación en Google Maps
+                  </a>
                 </div>
               </div>
             </div>
             <div class="col-lg-6">
               <div class="sede-card">
-                <div class="sede-media" data-video>
+                <div class="sede-media" data-video data-sede-video="media/trapiche(1).mp4">
                   <img src="media/trapiche1.png" alt="Sede Trapiche" />
                   <video muted loop playsinline preload="metadata">
-                    <source src="media/trapiche-tour.mp4" type="video/mp4" />
+                    <source src="media/trapiche(1).mp4" type="video/mp4" />
                   </video>
                 </div>
                 <div class="sede-info">
                   <h3>Luxury Trapiche</h3>
                   <p>Ambientes elegantes con pista central y zona premium.</p>
+                  <a class="sede-location" href="https://maps.app.goo.gl/yT97X3A8Rm455iXh9" target="_blank" rel="noopener">
+                    📍 Ver ubicación en Google Maps
+                  </a>
                 </div>
               </div>
             </div>
@@ -434,6 +444,22 @@
           <div class="modal-body">
             <video id="heroVideo" controls playsinline poster="media/video-cover.jpg">
               <source src="media/presentacion1.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="sedeVideoModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Recorrido de sede</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <video id="sedeVideo" controls playsinline>
+              <source src="" type="video/mp4" />
             </video>
           </div>
         </div>

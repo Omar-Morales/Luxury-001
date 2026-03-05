@@ -276,18 +276,23 @@ body.hide-header-brand .header-brand-text {
   align-items: flex-end;
   justify-content: space-between;
   gap: 24px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .section-head h2 {
   font-family: "Playfair Display", serif;
   font-size: clamp(2rem, 3vw, 3rem);
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .section-lead {
   max-width: 420px;
   color: rgba(247, 244, 238, 0.75);
+}
+
+#sedes .section-lead {
+  max-width: none;
+  margin-top: 15px; 
 }
 
 .about-label {
@@ -446,12 +451,15 @@ body.hide-header-brand .header-brand-text {
   border: 1px solid rgba(200, 161, 74, 0.2);
   background: rgba(12, 11, 10, 0.6);
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .sede-media {
   position: relative;
-  height: 320px;
+  height: 400px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .sede-media img,
@@ -478,7 +486,24 @@ body.hide-header-brand .header-brand-text {
 }
 
 .sede-info {
-  padding: 22px 24px 28px;
+  padding: 12px 20px 14px;
+}
+
+.sede-info p {
+  margin-bottom: 10px;
+}
+
+.sede-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.sede-location:hover {
+  color: var(--gold-soft);
 }
 
 .filter-tabs {
