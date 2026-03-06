@@ -151,7 +151,7 @@ body.hide-header-brand .header-brand-text {
   text-align: center;
   background:
     linear-gradient(rgba(12, 11, 10, 0.5), rgba(12, 11, 10, 0.5)),
-    url("media/principal.jpg") center/cover no-repeat;
+    url("media/inicio/principal.jpg") center/cover no-repeat;
 }
 
 .hero-centered .lead {
